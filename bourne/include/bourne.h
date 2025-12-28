@@ -1,16 +1,14 @@
 /**
  * @file bourne.h
- * @brief Aggregated include for the DeerBourne back-end modules.
+ * @brief Interfaces for the DeerBourne back-end service (Bourne).
  */
 
 #ifndef DEERBOURNE_BOURNE_H
 #define DEERBOURNE_BOURNE_H
 
-#include "bourne/config.h"
-#include "bourne/logging.h"
-#include "bourne/network.h"
-#include "bourne/service.h"
-#include "bourne/storage.h"
-#include "bourne/threading.h"
+/**
+ * @brief Initialize the back-end service state.
+ */
+void bourne_init(void);
 
 #endif // DEERBOURNE_BOURNE_H
