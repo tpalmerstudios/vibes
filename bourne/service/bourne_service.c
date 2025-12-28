@@ -9,20 +9,22 @@
 #include <stdlib.h>
 
 int main(void) {
-    BourneServer server;
-    BourneServerConfig config = {
-        .bind_address = "127.0.0.1",
-        .port = 5555,
-        .backlog = 8,
-    };
+    BourneServiceState state;
+    BourneServerConfig config;
+    bourne_config_use_defaults(&config);
 
-    if (!bourne_init(&server, &config)) {
+    if (!bourne_service_init(&state, &config)) {
         fprintf(stderr, "bourne: failed to initialize service\n");
         return EXIT_FAILURE;
     }
 
-    bourne_run(&server);
-    bourne_shutdown(&server);
+    if (!bourne_service_start(&state)) {
+        fprintf(stderr, "bourne: failed to start service\n");
+        bourne_service_stop(&state);
+        return EXIT_FAILURE;
+    }
+
+    bourne_service_stop(&state);
 
     return EXIT_SUCCESS;
 }

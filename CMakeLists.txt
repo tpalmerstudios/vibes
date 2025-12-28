@@ -8,9 +8,16 @@ set(CMAKE_C_EXTENSIONS OFF)
 # Options
 option(DEERBOURNE_ENABLE_TESTS "Enable DeerBourne tests" ON)
 option(DEERBOURNE_BUILD_DOCS "Enable documentation target" ON)
+option(DEERBOURNE_ENABLE_GUI "Build GTK-based front-end components" ON)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK4 REQUIRED IMPORTED_TARGET gtk4)
+if(DEERBOURNE_ENABLE_GUI)
+    pkg_check_modules(GTK4 QUIET IMPORTED_TARGET gtk4)
+    if(NOT GTK4_FOUND)
+        message(WARNING "GTK4 not found; GUI targets will be skipped.")
+    endif()
+endif()
+find_package(Threads REQUIRED)
 
 # Bourne library (static)
 file(GLOB_RECURSE BOURNE_LIBRARY_SOURCES CONFIGURE_DEPENDS
@@ -18,6 +25,7 @@ file(GLOB_RECURSE BOURNE_LIBRARY_SOURCES CONFIGURE_DEPENDS
 )
 add_library(bourne STATIC ${BOURNE_LIBRARY_SOURCES})
 target_include_directories(bourne PUBLIC bourne/include)
+target_link_libraries(bourne PUBLIC Threads::Threads)
 add_library(deerbourne::bourne ALIAS bourne)
 
 # Bourne service executable
@@ -33,27 +41,32 @@ target_link_libraries(bourne_service_debug PRIVATE bourne)
 target_compile_definitions(bourne_service_debug PRIVATE DEERBOURNE_DEBUG_BUILD)
 target_compile_options(bourne_service_debug PRIVATE -O0 -g)
 
-# Deer front-end library
-file(GLOB_RECURSE DEER_SOURCES CONFIGURE_DEPENDS
-    "deer/src/*.c"
+set(DEER_CORE_SOURCES
+    deer/src/client.c
+    deer/src/ui_config.c
 )
-add_library(deer ${DEER_SOURCES})
-target_include_directories(deer PUBLIC deer/include)
-add_library(deerbourne::deer ALIAS deer)
+add_library(deer_core ${DEER_CORE_SOURCES})
+target_include_directories(deer_core PUBLIC deer/include)
+target_link_libraries(deer_core PRIVATE bourne)
+add_library(deerbourne::deer_core ALIAS deer_core)
 
-target_link_libraries(deer PRIVATE bourne)
+if(DEERBOURNE_ENABLE_GUI AND GTK4_FOUND)
+    add_library(deer_ui deer/src/ui_layout.c)
+    target_include_directories(deer_ui PUBLIC deer/include)
+    target_link_libraries(deer_ui PUBLIC deer_core PkgConfig::GTK4)
+    add_library(deerbourne::deer_ui ALIAS deer_ui)
 
-# Deer GUI executable
-file(GLOB_RECURSE DEER_APP_SOURCES CONFIGURE_DEPENDS
-    "deer/app/*.c"
-)
-add_executable(deer_app ${DEER_APP_SOURCES})
-target_link_libraries(deer_app PRIVATE deer bourne PkgConfig::GTK4)
+    file(GLOB_RECURSE DEER_APP_SOURCES CONFIGURE_DEPENDS
+        "deer/app/*.c"
+    )
+    add_executable(deer_app ${DEER_APP_SOURCES})
+    target_link_libraries(deer_app PRIVATE deer_ui deer_core bourne PkgConfig::GTK4)
 
-add_executable(deer_app_debug ${DEER_APP_SOURCES})
-target_link_libraries(deer_app_debug PRIVATE deer bourne PkgConfig::GTK4)
-target_compile_definitions(deer_app_debug PRIVATE DEERBOURNE_DEBUG_BUILD)
-target_compile_options(deer_app_debug PRIVATE -O0 -g)
+    add_executable(deer_app_debug ${DEER_APP_SOURCES})
+    target_link_libraries(deer_app_debug PRIVATE deer_ui deer_core bourne PkgConfig::GTK4)
+    target_compile_definitions(deer_app_debug PRIVATE DEERBOURNE_DEBUG_BUILD)
+    target_compile_options(deer_app_debug PRIVATE -O0 -g)
+endif()
 
 # Documentation target
 if(DEERBOURNE_BUILD_DOCS)
