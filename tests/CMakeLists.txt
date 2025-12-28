@@ -1,0 +1,25 @@
+# CTest-based targets for DeerBourne.
+
+add_executable(test_bourne_config test_bourne_config.c)
+target_link_libraries(test_bourne_config PRIVATE bourne)
+add_test(NAME bourne_config COMMAND test_bourne_config)
+
+add_executable(test_bourne_query_parser test_bourne_query_parser.c)
+target_link_libraries(test_bourne_query_parser PRIVATE bourne)
+add_test(NAME bourne_query_parser COMMAND test_bourne_query_parser)
+
+add_executable(test_bourne_storage_search test_bourne_storage_search.c)
+target_link_libraries(test_bourne_storage_search PRIVATE bourne)
+add_test(NAME bourne_storage_search COMMAND test_bourne_storage_search)
+
+add_executable(test_bourne_storage_store test_bourne_storage_store.c)
+target_link_libraries(test_bourne_storage_store PRIVATE bourne)
+add_test(NAME bourne_storage_store COMMAND test_bourne_storage_store)
+
+add_executable(test_deer_config test_deer_config.c)
+target_link_libraries(test_deer_config PRIVATE deer_core)
+add_test(NAME deer_config COMMAND test_deer_config)
+
+add_executable(test_deer_client_connection test_deer_client_connection.c)
+target_link_libraries(test_deer_client_connection PRIVATE deer_core Threads::Threads)
+add_test(NAME deer_client_connection COMMAND test_deer_client_connection)

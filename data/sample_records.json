@@ -1,0 +1,213 @@
+[
+  {
+    "title": "Person · Arianna Patel",
+    "summary": "Urban planner blending adaptive reuse with transit equity programs.",
+    "category": "person",
+    "relationships": [
+      "Collaborates with: Person · Felix Moreno on corridor analytics",
+      "Advises: Home · Alder Row mobility options",
+      "Prefers transport via: Car · Solstice LX"
+    ],
+    "details": {
+      "type": "person",
+      "appearance": "Black hair with copper highlights; structured layers; 167cm; minimalist wardrobe",
+      "possessions": ["folding e-bike", "drafting tablet", "analog transit maps"],
+      "business_interest": "North Loop Studio — partner",
+      "interests": ["transit equity", "material reuse", "biophilic corridors"],
+      "notes": "Prefers cool palettes and gentle ambient light"
+    }
+  },
+  {
+    "title": "Person · Felix Moreno",
+    "summary": "CTO translating distributed sensor data into neighborhood analytics.",
+    "category": "person",
+    "relationships": [
+      "Partners with: Person · Arianna Patel for data modeling",
+      "Instruments: Car · Vireo SX as telemetry mule",
+      "Hosts review sessions at: Home · Harbor Loft"
+    ],
+    "details": {
+      "type": "person",
+      "appearance": "Silver undercut; monochrome layers; 180cm; tactile fabrics",
+      "possessions": ["mechanical keyboard", "gravel bike", "custom telemetry rig"],
+      "business_interest": "SignalGrid Labs — CTO",
+      "interests": ["edge compute", "privacy-first ML", "real-time mapping"],
+      "notes": "Favors charcoal accents and midnight blue interfaces"
+    }
+  },
+  {
+    "title": "Person · Priya Deshmukh",
+    "summary": "Hospitality designer crafting calming interiors and sensory experiences.",
+    "category": "person",
+    "relationships": [
+      "Designs interiors for: Home · Harbor Loft",
+      "Commutes with: Car · Lumen Tourer",
+      "Hosts showcases at: Home · Juniper Courtyard"
+    ],
+    "details": {
+      "type": "person",
+      "appearance": "Warm brown curls; linen-forward style; 160cm; soft silhouettes",
+      "possessions": ["material swatch library", "analog camera", "scent diffusers"],
+      "business_interest": "Lumen & Fern — principal designer",
+      "interests": ["restorative spaces", "acoustic comfort", "slow hospitality"],
+      "notes": "Keeps daylight balanced with amber accent lighting"
+    }
+  },
+  {
+    "title": "Person · Lionel Brooks",
+    "summary": "Archivist capturing neighborhood histories to inform resilience plans.",
+    "category": "person",
+    "relationships": [
+      "Documents: Home · Willamette Craftsman",
+      "Advises residents of: Home · Alder Row",
+      "Travels with: Car · Northstar Summit during winter routes"
+    ],
+    "details": {
+      "type": "person",
+      "appearance": "Salt-and-pepper fade; indigo workwear; 175cm; field-ready layers",
+      "possessions": ["field recorder", "archival scanner", "photo digitizer"],
+      "business_interest": "Civic Heritage Trust — researcher",
+      "interests": ["oral histories", "archival mapping", "resilience planning"],
+      "notes": "Prefers warm amber task lighting and tactile materials"
+    }
+  },
+  {
+    "title": "Car · Solstice LX",
+    "summary": "2021 plug-in hybrid sedan in satin graphite with panoramic roof.",
+    "category": "car",
+    "relationships": [
+      "Operated daily by: Person · Arianna Patel",
+      "Occasionally transports materials for: Home · Alder Row"
+    ],
+    "details": {
+      "type": "car",
+      "appearance": "Satin graphite; adaptive lighting; 19-inch wheels; panoramic roof",
+      "year": 2021,
+      "color": "graphite with soft silver trim",
+      "notes": "Plug-in hybrid tuned for quiet city approaches"
+    }
+  },
+  {
+    "title": "Car · Vireo SX",
+    "summary": "2022 electric fastback in midnight blue tuned for range.",
+    "category": "car",
+    "relationships": [
+      "Telemetry platform for: Person · Felix Moreno",
+      "Shuttles guests to: Home · Harbor Loft showcases"
+    ],
+    "details": {
+      "type": "car",
+      "appearance": "Midnight blue; flush door handles; aero kit; adaptive spoiler",
+      "year": 2022,
+      "color": "midnight blue with obsidian contrast",
+      "notes": "400+ km range with panoramic roof"
+    }
+  },
+  {
+    "title": "Car · Lumen Tourer",
+    "summary": "2019 wagon in alpine white with modular cargo system.",
+    "category": "car",
+    "relationships": [
+      "Shared by: Person · Priya Deshmukh for material runs",
+      "Supports installs at: Home · Juniper Courtyard"
+    ],
+    "details": {
+      "type": "car",
+      "appearance": "Alpine white; matte black trim; utility rails; wide cargo bay",
+      "year": 2019,
+      "color": "alpine white with matte black accents",
+      "notes": "AWD wagon with modular cargo bays for samples"
+    }
+  },
+  {
+    "title": "Car · Northstar Summit",
+    "summary": "2020 SUV in storm gray tuned for trail support crews.",
+    "category": "car",
+    "relationships": [
+      "Used by: Person · Lionel Brooks on winter archival trips",
+      "Resupplies: Home · Alder Row during storms"
+    ],
+    "details": {
+      "type": "car",
+      "appearance": "Storm gray; skid plates; amber auxiliary lights; roof basket",
+      "year": 2020,
+      "color": "storm gray with amber markers",
+      "notes": "Off-road package with medical kit storage"
+    }
+  },
+  {
+    "title": "Home · Willamette Craftsman",
+    "summary": "1958 craftsman with sage-green exterior and oak details.",
+    "category": "home",
+    "relationships": [
+      "Archived by: Person · Lionel Brooks",
+      "Landscape consulted by: Person · Arianna Patel"
+    ],
+    "details": {
+      "type": "home",
+      "appearance": "Sage green siding; charcoal trim; oak beams; porch swing",
+      "year": 1958,
+      "color": "sage with charcoal accents",
+      "location": "Portland, OR",
+      "possessions": ["native garden", "restored porch swing", "open eaves"],
+      "notes": "Restored with locally milled oak and rain gardens"
+    }
+  },
+  {
+    "title": "Home · Harbor Loft",
+    "summary": "Adaptive reuse loft with exposed brick and soft amber lighting.",
+    "category": "home",
+    "relationships": [
+      "Interior by: Person · Priya Deshmukh",
+      "Data review site for: Person · Felix Moreno",
+      "Hosts rooftop dinners with: Person · Arianna Patel"
+    ],
+    "details": {
+      "type": "home",
+      "appearance": "Exposed brick; charcoal steel; amber uplighting; tall steel windows",
+      "year": 2021,
+      "color": "brick red with charcoal steel",
+      "location": "Baltimore, MD",
+      "possessions": ["roof deck planters", "modular shelving", "listening nook"],
+      "notes": "1910 structure with 2021 interior shell and acoustic treatment"
+    }
+  },
+  {
+    "title": "Home · Juniper Courtyard",
+    "summary": "Modern courtyard home wrapped in juniper and glass.",
+    "category": "home",
+    "relationships": [
+      "Styled by: Person · Priya Deshmukh",
+      "Gardened by: Person · Arianna Patel",
+      "Demo site for: Car · Lumen Tourer cargo layouts"
+    ],
+    "details": {
+      "type": "home",
+      "appearance": "Juniper cladding; glass courtyard walls; matte black window frames",
+      "year": 2018,
+      "color": "juniper wood with matte black accents",
+      "location": "Santa Fe, NM",
+      "possessions": ["pottery studio", "climate battery greenhouse", "radiant floors"],
+      "notes": "Passive cooling loop with night flush vents"
+    }
+  },
+  {
+    "title": "Home · Alder Row",
+    "summary": "Townhome trio with charcoal brick and copper balcony rails.",
+    "category": "home",
+    "relationships": [
+      "Residents collaborate with: Person · Arianna Patel",
+      "Receives winter support from: Car · Northstar Summit",
+      "Shares green roof access with: Person · Felix Moreno"
+    ],
+    "details": {
+      "type": "home",
+      "appearance": "Charcoal brick; copper rails; triple skylights; planted entry",
+      "year": 2020,
+      "color": "charcoal brick with copper highlights",
+      "location": "Minneapolis, MN",
+      "possessions": ["shared green roof", "integrated bike storage", "winter mudroom"],
+      "notes": "Geo-thermal loops and stormwater planters on the mews"
+    }
+  }
+]

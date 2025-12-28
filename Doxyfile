@@ -1,0 +1,13 @@
+# Doxygen configuration for DeerBourne
+PROJECT_NAME           = "DeerBourne"
+PROJECT_BRIEF          = "Front-end (Deer) and back-end (Bourne) service components."
+OUTPUT_DIRECTORY       = docs
+INPUT                  = bourne/include bourne/src deer/include deer/src README.md
+FILE_PATTERNS          = *.c *.h *.md
+RECURSIVE              = YES
+GENERATE_LATEX         = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+EXTRACT_ALL            = YES
+JAVADOC_AUTOBRIEF      = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
